@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+
+    <link rel="stylesheet" href="./css/base.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+
+
+
+    <!-- Contact form -->
+    <!-- <link rel="stylesheet" href="./css/soon.css"> -->
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/form-jquery.validate.min.js"></script>
+    <script type="text/javascript" src="./js/form-jquery.form.js"></script>
+    <script type="text/javascript" src="./js/form-contact-es.js"></script>
+
+
+
+
+</head>
+
+<body id="all" class="_off">
+
+    <div class="respo"></div>
+
+    <audio id="audio1" src="./mp3/loop1.mp3" type="audio/mpeg" loop></audio>
+    <audio id="audio2" src="./mp3/breathing.mp3" type="audio/mpeg" loop></audio>
+
+    <script>
+        function myFunction() {
+            // var x = document.getElementById("myDIV");
+            var element = document.getElementById("all");
+            var audio2 = document.getElementById("audio2");
+            var audio1 = document.getElementById("audio1");
+            if (element.className === "_off") {
+                // document.getElementById("demo").innerHTML = 1 ;
+                element.classList.remove("_off");
+                element.classList.add("_on");
+                audio2.play();
+                audio1.play();
+            } else if (element.className === "_on") {
+                // document.getElementById("demo").innerHTML = 2 ;
+                element.classList.remove("_on");
+                element.classList.add("_off");
+                audio2.pause();
+                audio2.currentTime = 0;
+                audio1.pause();
+                audio1.currentTime = 0;
+            }
+        }
+    </script>
+
+    <!--
+    <div class="bg">
+        <div class="bg_obj">
+        </div>
+    </div>
+    -->
+
+    <div class="secc">
+
+    <header>
+        <h1>Bosque Andante </h1>
+        <button class="btn2" onclick="myFunction()">Abrir</button>
+    </header>
+
+
+    <div class="block">
+        <div class="animal">
+            <div class="head">
+                <img class="image-head" src="./img/head.svg" alt="">
+                <img class="image-eye-l" src="./img/eye-l.svg" alt="">
+                <img class="image-eye-r" src="./img/eye-r.svg" alt="">
+            </div>
+            <div class="chest">
+                <img class="image-chest" src="./img/chest.svg" alt="">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bg1-1">
+        <div class="bg1-1_obj">
+        </div>
+    </div>
+
+
+    <div class="bg1-2">
+        <div class="bg1-2_obj">
+        </div>
+    </div>
+
+
+    <div class="mail">
+        <!-- <img class="image-mail" src="./img/square.png" alt=""> -->
+        <!--
+        <form class="q" action="./soon/log.php" method="post" enctype="text/plain">
+            <p>Ingrese su pregunta o su deseo</p>
+            <input name="name" placeholder="Nombre">
+            <input name="email" type="email" placeholder="Email">                        <label>Message</label>
+            <textarea name="message" placeholder="Número y deseo"></textarea>
+            <button class="btn1" id="submit" name="submit" type="submit" value="Submit">Enviar</button>
+        </form>
+        -->
+        <form class="q" id="contactform" action="./soon/processForm-es.php" method="post">
+            <div class="field _l1">
+                <label for="name">Nombre</label>
+                <input type="text" name="name" id="name" value="" />
+            </div>
+            <div class="field _l1">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" value="" />
+            </div>
+            <div class="field _t1">
+                <label for="message">Número y deseo</label>
+                <textarea name="message" id="message"></textarea>
+            </div>
+            <div class="field _b1">
+                <input type="submit" name="submit" id="send" value="Enviar" />
+            </div>
+        </form>
+        <div id="response"></div>
+
+        <hr>
+        <!-- <a class="q reload" href="javascript:location.reload()">Volver a cargar</a> -->
+    </div>
+
+
+
+
+    <div class="space0">
+        <picture>
+            <!--[if IE 9]><video style="display: none;"><![endif]-->
+            <source srcset="./img/bg0m.png" media="(max-width: 768px)">
+            <source srcset="./img/bg0.png" media="(max-width: 1000px)">
+            <!--[if IE 9]></video><![endif]-->
+            <img srcset="./img/bg0.png" alt="#" class="space0-1">
+        </picture>
+    </div>
+
+    </div>
+
+    <footer>
+        <p>This is an email link: <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Send Mail</a></p>
+    </footer>
+
+</body>
+</html>
